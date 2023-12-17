@@ -1,5 +1,5 @@
 class Storage {
-    #items = []; 
+    #items; 
     constructor(items) {
         this.#items = items;
     }
@@ -11,7 +11,10 @@ class Storage {
     }
     removeItem(itemToRemove) {
         const i = this.#items.indexOf(itemToRemove);
-        this.#items.splice(i, 1);
+        if (i !== -1) {
+            this.#items.splice(i, 1);  
+        }
+      
     }
 }
 
